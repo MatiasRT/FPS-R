@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour {
     [SerializeField] private AudioClip shootSound;
 
     [SerializeField] private float fireRate = 0.1f;                         //El delay entre cada disparo
-    [SerializeField] private float damage = 20f;
+    [SerializeField] private int damage = 20;
 
     float fireTimer;                                                        //Contador de tiempo para el delay
 
@@ -89,9 +89,9 @@ public class Weapon : MonoBehaviour {
 
         if (Physics.Raycast(shootPoint.position, shootPoint.transform.forward, out hit, range)) //Este es el disparo en sí
         {
-            if (!hit.collider.isTrigger)
-            {
-                //Debug.Log(hit.transform.name + " found!");                      //Muestra el nombre del objeto al que golpea el raycast
+            //if (!hit.collider.isTrigger)
+            //{
+                Debug.Log(hit.transform.name + " found!");                      //Muestra el nombre del objeto al que golpea el raycast
 
                 //Esto crea un chispaso justo donde pega el raycast
                 GameObject hitParticleEffect = Instantiate(hitParticles, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
@@ -103,11 +103,11 @@ public class Weapon : MonoBehaviour {
                 Destroy(hitParticleEffect, 1f);
                 //Destroy(bulletHole, 4f);
 
-                //if (hit.transform.GetComponent<HealthController>())              //Esto pregunta si el objeto al que le disparamos tiene el controlador de vida
-                //{
-                //    hit.transform.GetComponent<HealthController>().ApplyDamage(damage); //Accedo a la funcion del controlador y le mando la variable damage
-                //}
-            }
+                if (hit.transform.GetComponent<EnemyHealth>())              //Esto pregunta si el objeto al que le disparamos tiene el controlador de vida
+                {
+                    hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);//, hit.point);//ApplyDamage(damage); //Accedo a la funcion del controlador y le mando la variable damage
+                }
+            //}
         }
 
         anim.CrossFadeInFixedTime("Shot", 0.01f);                           //Ejecuta la animacion de disparo

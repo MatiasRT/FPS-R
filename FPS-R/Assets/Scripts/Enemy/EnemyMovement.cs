@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour {
     private EnemyHealth enemyHealth;
     private NavMeshAgent nav;
 
+    Animator anim;
 
     void Awake()
     {
@@ -18,6 +19,8 @@ public class EnemyMovement : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
+
+        anim = GetComponent<Animator>();
     }
 
 
@@ -38,8 +41,10 @@ public class EnemyMovement : MonoBehaviour {
         float dist = Vector3.Distance(player.position, transform.position);
         if (nav.enabled && (dist <= distToChase))
         {
+            anim.SetBool("isRunning", true);
             nav.SetDestination(player.position);
             Invoke("SetDestiny", 5f);
         }
+        else anim.SetBool("isRunning", false);
     }
 }

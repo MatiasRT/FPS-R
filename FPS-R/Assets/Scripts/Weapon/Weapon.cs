@@ -91,16 +91,16 @@ public class Weapon : MonoBehaviour {
         {
             //if (!hit.collider.isTrigger)
             //{
-                Debug.Log(hit.transform.name + " found!");                      //Muestra el nombre del objeto al que golpea el raycast
+                //Debug.Log(hit.transform.name + " found!");                      //Muestra el nombre del objeto al que golpea el raycast
 
                 //Esto crea un chispaso justo donde pega el raycast
-                GameObject hitParticleEffect = Instantiate(hitParticles, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
+                /*GameObject hitParticleEffect = Instantiate(hitParticles, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
                 hitParticleEffect.transform.SetParent(hit.transform);
                 //Esto crea una imagen justo donde pega el raycast
                 GameObject bulletHole = Instantiate(bulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
                 bulletHole.transform.SetParent(hit.transform);
 
-                Destroy(hitParticleEffect, 1f);
+                Destroy(hitParticleEffect, 1f);*/
                 //Destroy(bulletHole, 4f);
 
                 if (hit.transform.GetComponent<EnemyHealth>())              //Esto pregunta si el objeto al que le disparamos tiene el controlador de vida

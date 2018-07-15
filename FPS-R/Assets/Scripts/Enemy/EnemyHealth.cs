@@ -32,6 +32,8 @@ public class EnemyHealth : MonoBehaviour {
         capsuleCollider = GetComponent<CapsuleCollider>();
 
         currentHealth = startingHealth;
+
+        //SetKinematic(true);
     }
 
 
@@ -72,10 +74,14 @@ public class EnemyHealth : MonoBehaviour {
         capsuleCollider.isTrigger = true;
 
         //anim.SetTrigger("Dead");
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 0.5f);
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+
+        //SetKinematic(false);
+
+        GetComponent<Animator>().enabled = false;
     }
 
 
@@ -88,4 +94,13 @@ public class EnemyHealth : MonoBehaviour {
         //WinManager.cantToWin--;
         Destroy(gameObject, 2f);
     }
+
+    /*void SetKinematic(bool newValue)
+    {
+        Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rb in bodies)
+        {
+            rb.isKinematic = newValue;
+        }
+    }*/
 }

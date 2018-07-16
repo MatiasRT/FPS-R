@@ -151,7 +151,7 @@ public class Weapon : MonoBehaviour {
 
     private void UpdadateAmmoText()
     {
-        //ammoText.text = currentBullets + " / " + bulletsLeft;
+        ammoText.text = currentBullets + " / " + bulletsLeft;
     }
 
     /*IEnumerator LoseScene()

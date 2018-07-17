@@ -8,8 +8,8 @@ public class PlayerHealth : MonoBehaviour {
 
     [SerializeField] int startingHealth = 100;
     [SerializeField] int currentHealth;
-    //[SerializeField] Slider healthSlider;
-    //[SerializeField] Image damageImage;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] Image damageImage;
     [SerializeField] AudioClip deathClip;
     [SerializeField] float flashSpeed = 5f;
     [SerializeField] Color flashColour = new Color(1f, 0f, 0f, 0.1f);
@@ -39,11 +39,11 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (damaged)
         {
-            //damageImage.color = flashColour;
+            damageImage.color = flashColour;
         }
         else
         {
-            //damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
     }
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour {
 
         currentHealth -= amount;
 
-        //healthSlider.value = currentHealth;
+        healthSlider.value = currentHealth;
 
         playerAudio.Play();
 

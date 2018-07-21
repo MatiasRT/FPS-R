@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] int jumps;
     int counter;
+    bool isJumping;
 
     void Start()
     {
@@ -26,18 +27,22 @@ public class PlayerJump : MonoBehaviour
             {
                 verticalVelocity = jumpForce;
 
-                if (!controller.isGrounded && counter < jumps)
-                {
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        verticalVelocity += jumpForce;
-                        counter++;
-                    }
-                }
+                isJumping = true;
             }
         }
         else verticalVelocity -= gravity * Time.deltaTime;
-        
+
+        if (isJumping)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                jumpForce = 25;
+                verticalVelocity += jumpForce;
+                counter++;
+                isJumping = false;
+            }
+            jumpForce = 20;
+        }
 
         Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
         controller.Move(moveVector * Time.deltaTime);

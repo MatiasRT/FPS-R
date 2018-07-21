@@ -374,6 +374,8 @@
     <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Weapon\WeaponSway.cs" />
+    <Compile Include="Assets\Smart Turret Template\Scripts\Actor.cs" />
+    <Compile Include="Assets\Smart Turret Template\Scripts\Turret.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

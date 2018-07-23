@@ -356,6 +356,14 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\FadeText.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\FadeText1.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\Fading.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\Gizmo.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\SettingsMenu.cs" />
+    <Compile Include="Assets\Scripts\CanvasScripts\StartButtons.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />

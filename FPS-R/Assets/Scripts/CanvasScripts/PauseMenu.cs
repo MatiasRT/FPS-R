@@ -70,6 +70,6 @@ public class PauseMenu : MonoBehaviour {
     {
         float fadeTime = GameObject.Find("Fade").GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Menu");
     }
 }

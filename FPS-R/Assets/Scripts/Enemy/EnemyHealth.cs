@@ -80,6 +80,7 @@ public class EnemyHealth : MonoBehaviour {
         enemyAudio.Play();
 
         //SetKinematic(false);
+        ScoreManager.score += scoreValue;
 
         GetComponent<Animator>().enabled = false;
     }

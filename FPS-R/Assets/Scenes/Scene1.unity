@@ -4343,7 +4343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 100
   bulletsPerMag: 30
-  bulletsLeft: 200
+  bulletsLeft: 300
   currentBullets: 0
   ammoText: {fileID: 1032879778}
   shootPoint: {fileID: 728850242}
@@ -15141,11 +15141,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7a1b1ed2eeebace439668c7e579ea8d8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

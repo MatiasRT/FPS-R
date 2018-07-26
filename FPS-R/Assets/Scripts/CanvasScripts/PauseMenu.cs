@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField] private GameObject playerHB;
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private GameObject playerWeapon;
-    [SerializeField] private AudioSource sound;
+    //[SerializeField] private AudioSource sound;
 
     void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour {
         playerCamera.GetComponent<PlayerLook>().enabled = true;
         playerWeapon.GetComponent<Weapon>().enabled = true;
 
-        sound.GetComponent<AudioSource>().enabled = true;
+        //sound.GetComponent<AudioSource>().enabled = true;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour {
         playerCamera.GetComponent<PlayerLook>().enabled = false;
         playerWeapon.GetComponent<Weapon>().enabled = false;
 
-        sound.GetComponent<AudioSource>().enabled = false;
+        //sound.GetComponent<AudioSource>().enabled = false;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

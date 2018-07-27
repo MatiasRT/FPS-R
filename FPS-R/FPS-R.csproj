@@ -375,6 +375,7 @@
     <Compile Include="Assets\Scripts\Player\Flashlight.cs" />
     <Compile Include="Assets\Scripts\Player\FlashlightOffset.cs" />
     <Compile Include="Assets\Scripts\Player\Footsteps.cs" />
+    <Compile Include="Assets\Scripts\Player\GrabObject.cs" />
     <Compile Include="Assets\Scripts\Player\HeadBob.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerJump.cs" />

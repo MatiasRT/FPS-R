@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour {
 
         if (score >= 666f)
         {
-            Debug.Log("ganaste");
             if (winText != null)
                 winText.enabled = true;
             Time.timeScale = 0.1f;

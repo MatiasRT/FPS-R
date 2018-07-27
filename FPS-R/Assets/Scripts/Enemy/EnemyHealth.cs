@@ -73,8 +73,8 @@ public class EnemyHealth : MonoBehaviour {
 
         capsuleCollider.isTrigger = true;
 
-        //anim.SetTrigger("Dead");
-        Destroy(gameObject, 0.5f);
+        anim.SetTrigger("Death");
+        Destroy(gameObject, 2.2f);
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
@@ -82,7 +82,7 @@ public class EnemyHealth : MonoBehaviour {
         //SetKinematic(false);
         ScoreManager.score += scoreValue;
 
-        GetComponent<Animator>().enabled = false;
+        //GetComponent<Animator>().enabled = false;
     }
 
 

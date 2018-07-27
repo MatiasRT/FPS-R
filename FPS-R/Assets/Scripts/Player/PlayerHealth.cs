@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] AudioClip deathClip;
     [SerializeField] float flashSpeed = 5f;
     [SerializeField] Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    [SerializeField] private Text loseText;
     private Animator anim;
     private AudioSource playerAudio;
     private PlayerMove playerMovement;
@@ -46,6 +47,14 @@ public class PlayerHealth : MonoBehaviour {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
+
+        if (isDead)
+        {
+            if (loseText != null)
+                loseText.enabled = true;
+            //Time.timeScale = 0.1f;
+            Invoke("LoadLose", 0.1f);
+        }
     }
 
 
@@ -82,8 +91,9 @@ public class PlayerHealth : MonoBehaviour {
     }
 
 
-    public void RestartLevel()
+    void LoadLose()
     {
-        SceneManager.LoadScene(0);
+        if(Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(1);
     }
 }

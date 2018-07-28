@@ -9,12 +9,15 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float gravity;
     [SerializeField] float jumpForce;
     [SerializeField] int jumps;
+    AudioSource _audio;
+    [SerializeField] AudioClip jump;
     int counter;
     bool isJumping;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        _audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class PlayerJump : MonoBehaviour
                 verticalVelocity += jumpForce;
                 counter++;
                 isJumping = false;
+                _audio.PlayOneShot(jump);
             }
             jumpForce = 20;
         }

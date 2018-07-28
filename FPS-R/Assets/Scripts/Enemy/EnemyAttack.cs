@@ -67,7 +67,7 @@ public class EnemyAttack : MonoBehaviour {
         {
             anim.SetTrigger("Attack");
             playerHealth.TakeDamage(attackDamage);
-            enemyHealth.TakeDamage(20);//, transform.position);
+            enemyHealth.TakeDamage(0);
         }
     }
 }

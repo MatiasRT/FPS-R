@@ -210,8 +210,6 @@ GameObject:
   - component: {fileID: 20081866137860000}
   - component: {fileID: 124539514866899614}
   - component: {fileID: 81470195599365378}
-  - component: {fileID: 114593165632151394}
-  - component: {fileID: 114380869607796052}
   - component: {fileID: 114852232126222420}
   m_Layer: 0
   m_Name: FirstPersonCamera
@@ -1066,7 +1064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4811958173794568}
   - component: {fileID: 108054466623276012}
-  - component: {fileID: 114480524173444832}
   - component: {fileID: 82525207668517680}
   - component: {fileID: 114745769070779222}
   m_Layer: 0
@@ -2428,24 +2425,6 @@ MonoBehaviour:
   amount: 0.03
   maxAmount: 0.07
   smoothAmount: 4
---- !u!114 &114380869607796052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1192976156273084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f6377a1486f6564abb9a99a8ecdf5c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactButton: Interact
-  interactDistance: 3
-  interactLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  interactIcon: {fileID: 0}
-  isInteracting: 0
 --- !u!114 &114439435661595076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2460,59 +2439,8 @@ MonoBehaviour:
   walkRepeatingTime: 1
   runRepeatingTime: 0.4
   _randomStepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
---- !u!114 &114480524173444832
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1937670328308964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  strength: 1
-  overrideColor: 0
-  overridingColor: {r: 0.9999, g: 0.9999, b: 0.9999, a: 0.9999}
-  useShadow: 1
-  shadowMapRenderTexture: {fileID: 0}
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor: {r: 0, g: 1, b: 1, a: 1}
-  storeShadowDataShader: {fileID: 4800000, guid: fff19db2423616b4dbabe995cd97279e,
-    type: 3}
-  shadowDataRenderTexture: {fileID: 0}
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  storeDirectionalSpotLightCookieMapShader: {fileID: 4800000, guid: ffdac5434c39f7545b910c253007c8fc,
-    type: 3}
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  storePointLightShadowMapShader: {fileID: 4800000, guid: f1531a9bd4087ff468de8de09f6ba126,
-    type: 3}
-  storePointLightShadowMapMesh: {fileID: 4300000, guid: d68bec3f4c08e40468fad98606344ea6,
-    type: 3}
-  storePointLightCookieMapShader: {fileID: 4800000, guid: 83815c326d7f2514884f3fc7a05b5aef,
-    type: 3}
---- !u!114 &114593165632151394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1192976156273084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 7094c3c7dacd59d4d9fdee297f12babb, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114745769070779222
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,16 +6,9 @@ public class EnemyHealth : MonoBehaviour {
 
     [SerializeField] int startingHealth = 100;
     [SerializeField] int currentHealth;
-    [SerializeField] float sinkSpeed = 2.5f;
     [SerializeField] int scoreValue = 10;
     [SerializeField] AudioClip deathClip;
-
-    public int CurrentHealth
-    {
-        get { return currentHealth; }
-    }
-
-
+    [SerializeField] private AudioClip hurt;
     private Animator anim;
     private AudioSource enemyAudio;
     private ParticleSystem hitParticles;
@@ -23,6 +16,10 @@ public class EnemyHealth : MonoBehaviour {
     private bool isDead;
     private bool isSinking;
 
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+    }
 
     void Awake()
     {
@@ -32,26 +29,14 @@ public class EnemyHealth : MonoBehaviour {
         capsuleCollider = GetComponent<CapsuleCollider>();
 
         currentHealth = startingHealth;
-
-        //SetKinematic(true);
     }
-
-
-    void Update()
-    {
-        if (isSinking)
-        {
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-        }
-    }
-
 
     public void TakeDamage(int amount)//, Vector3 hitPoint)
     {
         if (isDead)
             return;
 
-        enemyAudio.Play();
+        enemyAudio.PlayOneShot(hurt);
 
         currentHealth -= amount;
 
@@ -72,36 +57,15 @@ public class EnemyHealth : MonoBehaviour {
         isDead = true;
 
         capsuleCollider.isTrigger = true;
-
+        //GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         anim.SetTrigger("Death");
         Destroy(gameObject, 2.2f);
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
 
-        //SetKinematic(false);
         ScoreManager.score += scoreValue;
 
         //GetComponent<Animator>().enabled = false;
     }
-
-
-    public void StartSinking()
-    {
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
-        isSinking = true;
-        ScoreManager.score += scoreValue;
-        //WinManager.cantToWin--;
-        Destroy(gameObject, 2f);
-    }
-
-    /*void SetKinematic(bool newValue)
-    {
-        Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
-        foreach (Rigidbody rb in bodies)
-        {
-            rb.isKinematic = newValue;
-        }
-    }*/
 }

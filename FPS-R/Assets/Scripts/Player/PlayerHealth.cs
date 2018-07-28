@@ -14,9 +14,12 @@ public class PlayerHealth : MonoBehaviour {
     [SerializeField] float flashSpeed = 5f;
     [SerializeField] Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     [SerializeField] private Text loseText;
+    [SerializeField] private Image dImage;
     private Animator anim;
     private AudioSource playerAudio;
     private PlayerMove playerMovement;
+    private PlayerLook playerLook;
+    private PlayerJump playerJump;
     private Weapon playerShooting;
     private bool isDead;
     private bool damaged;
@@ -31,6 +34,8 @@ public class PlayerHealth : MonoBehaviour {
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMove>();
+        playerLook = GetComponentInChildren<PlayerLook>();
+        playerJump = GetComponent<PlayerJump>();
         playerShooting = GetComponentInChildren<Weapon>();
         currentHealth = startingHealth;
     }
@@ -53,7 +58,7 @@ public class PlayerHealth : MonoBehaviour {
             if (loseText != null)
                 loseText.enabled = true;
             //Time.timeScale = 0.1f;
-            Invoke("LoadLose", 0.1f);
+            Invoke("LoadLose", 3f);
         }
     }
 
@@ -88,12 +93,15 @@ public class PlayerHealth : MonoBehaviour {
 
         playerMovement.enabled = false;
         playerShooting.enabled = false;
+        playerLook.enabled = false;
+        playerJump.enabled = false;
+        dImage.enabled = true;
     }
 
 
     void LoadLose()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        //if(Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(1);
     }
 }

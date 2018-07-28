@@ -2013,7 +2013,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 328fa966e7385094c8198ea796addae8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2141,7 +2141,8 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 30
-  deathClip: {fileID: 8300000, guid: 328fa966e7385094c8198ea796addae8, type: 3}
+  deathClip: {fileID: 8300000, guid: 1895f4f06e8bb7942a8584fac58ac418, type: 3}
+  hurt: {fileID: 8300000, guid: a585d2c2f3531824797bfc1a740aed34, type: 3}
 --- !u!135 &135449024281208510
 SphereCollider:
   m_ObjectHideFlags: 1

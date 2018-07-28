@@ -105,7 +105,7 @@ public class Weapon : MonoBehaviour {
 
                 if (hit.transform.GetComponent<EnemyHealth>())              //Esto pregunta si el objeto al que le disparamos tiene el controlador de vida
                 {
-                    hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage);//, hit.point);//ApplyDamage(damage); //Accedo a la funcion del controlador y le mando la variable damage
+                    hit.transform.GetComponent<EnemyHealth>().TakeDamage(damage, hit.point);//, hit.point);//ApplyDamage(damage); //Accedo a la funcion del controlador y le mando la variable damage
                 }
             //}
         }

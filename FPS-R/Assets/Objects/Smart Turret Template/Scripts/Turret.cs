@@ -114,7 +114,7 @@ public class Turret : MonoBehaviour {
 			if (CheckTags (hit.collider) == true) {
 				Shot ();
                 //hit.collider.GetComponent<Actor> ().ReceiveDamage (parameters.power, hit.point);
-                hit.collider.GetComponent<EnemyHealth>().TakeDamage(50);
+                hit.collider.GetComponent<EnemyHealth>().TakeDamage(50, hit.point);
 			}
 
 			ClearTargets ();	

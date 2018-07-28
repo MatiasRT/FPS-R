@@ -3749,7 +3749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 8300000, guid: 328fa966e7385094c8198ea796addae8, type: 3}
   hurt: {fileID: 8300000, guid: fedd444391e27f44ab28174089076cad, type: 3}

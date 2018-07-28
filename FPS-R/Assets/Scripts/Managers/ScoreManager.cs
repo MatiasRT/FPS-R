@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour {
     public static int score;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text winText;
+    [SerializeField] AudioSource win;
+    [SerializeField] AudioSource bkm;
 
     void Awake()
     {
@@ -26,7 +28,9 @@ public class ScoreManager : MonoBehaviour {
             if (winText != null)
                 winText.enabled = true;
             Time.timeScale = 0.1f;
-            Invoke("LoadWin", 0.5f);
+            win.enabled = true;
+            bkm.enabled = false;
+            Invoke("LoadWin", 1.15f);
         }
         else
             scoreText.text = "Score: " + score;

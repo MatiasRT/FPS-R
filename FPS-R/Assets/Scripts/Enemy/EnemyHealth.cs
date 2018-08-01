@@ -14,7 +14,6 @@ public class EnemyHealth : MonoBehaviour {
     private ParticleSystem hitParticles;
     private CapsuleCollider capsuleCollider;
     private bool isDead;
-    private bool isSinking;
 
     public int CurrentHealth
     {
@@ -52,20 +51,12 @@ public class EnemyHealth : MonoBehaviour {
 
     void Death()
     {
-        //Debug.Log("Estoy Muerto");
-
         isDead = true;
-
         capsuleCollider.isTrigger = true;
-        //GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         anim.SetTrigger("Death");
         Destroy(gameObject, 2.2f);
-
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
-
         ScoreManager.score += scoreValue;
-
-        //GetComponent<Animator>().enabled = false;
     }
 }

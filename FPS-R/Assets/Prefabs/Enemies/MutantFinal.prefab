@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 82710570400694376}
   - component: {fileID: 205195494663160286}
   m_Layer: 0
-  m_Name: MutanFinal
+  m_Name: MutantFinal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2043,7 +2043,8 @@ AudioSource:
   m_GameObject: {fileID: 1185687826994844}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: bbd88636a8098fb46b233796dfae102c,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5754,7 +5755,7 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0, y: 0, z: 0}
   m_Size: 1
-  m_FadeMode: 0
+  m_FadeMode: 1
   m_AnimateCrossFading: 0
   m_LODs:
   - screenRelativeHeight: 0.27181965
